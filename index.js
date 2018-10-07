@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const reader = require('readline')
 const fs = require('fs')
 
