@@ -1,6 +1,6 @@
 {
-  "name": "fixcommas",
-  "version": "1.0.0",
+  "name": "@tmilar/fix-csv-chars",
+  "version": "0.0.1",
   "description": "Fix commas from a .csv file",
   "main": "index.js",
   "scripts": {
