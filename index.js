@@ -25,6 +25,7 @@ const lineReader = reader.createInterface({
 // Init output writer
 let outputText = ""
 const writeOutput = (text) => {
+  // store in-memory the output as a new line
   outputText += text + "\n"
 }
 
@@ -52,14 +53,13 @@ lineReader.on('line', (line) => {
     fixedLine += quoteFixed
 
     // remove the already read part from the input line, and start over.
-    line = line.slice(nextQuoted.index + Math.max(quoteFixed.length - 1, 0))
+    line = line.slice(nextQuoted.index + Math.max(quoteFixed.length, 0))
   }
   writeOutput(fixedLine)
 });
 
 // When finished, write result to output file
 inputReadStream.on('end', () => {
-  // process.exit()
   fs.writeFile(outputFilename, outputText, 'utf8', function (err) {
     if (err) {
       console.log('Some error occured - file either not saved or corrupted file saved.');
