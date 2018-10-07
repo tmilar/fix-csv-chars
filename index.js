@@ -39,6 +39,7 @@ lineReader.on('line', (line) => {
     step++
     const nextQuoted = line.match(/"[^"]*?[^"]*?"/);
     if(!nextQuoted || !nextQuoted.length) {
+      fixedLine += line
       break
     }
 
