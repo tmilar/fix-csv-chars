@@ -18,5 +18,8 @@
   },
   "bin": {
     "fix-csv-chars": "./index.js"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
